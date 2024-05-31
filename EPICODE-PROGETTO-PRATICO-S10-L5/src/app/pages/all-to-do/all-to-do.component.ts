@@ -27,7 +27,6 @@ export class AllToDoComponent {
 
   searchToDobyUser(query:string) {
     this.toDoArrWithUser = this.toDoSvc.searchByUser(query)
-    console.log(this.toDoArrWithUser)
   }
 }
 

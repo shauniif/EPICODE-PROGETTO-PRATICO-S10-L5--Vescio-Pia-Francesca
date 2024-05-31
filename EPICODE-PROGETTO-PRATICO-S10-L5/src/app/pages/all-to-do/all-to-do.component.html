@@ -1,6 +1,6 @@
 <div>
-  <div class="row">
-    <div class="col">
+  <div class="row p-0">
+    <div class="col p-0 px-4">
       <input
         type="text"
         class="form-control"
@@ -10,7 +10,7 @@
         (input)="searchToDobyUser(query)"
       />
     </div>
-    <h4>Risulati trovati con :{{ query }}</h4>
+    <h4 class="px-4">Risulati trovati con: {{ query }}</h4>
   </div>
   <div class="row row-cols-1 overflow-y-scroll hDiv">
     <div class="col" *ngFor="let toDo of toDoArrWithUser">

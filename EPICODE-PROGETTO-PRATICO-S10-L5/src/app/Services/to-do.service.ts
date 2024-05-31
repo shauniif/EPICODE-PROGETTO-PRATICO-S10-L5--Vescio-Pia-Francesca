@@ -944,7 +944,7 @@ export class ToDoService {
     if(query !== undefined) {
       let postWithAuthor = this.getUserWithPosts();
       return postWithAuthor.filter((p) => p.user?.firstName.toLowerCase().includes(query.toLowerCase()));
-      ;
+
     }
     return []
   }

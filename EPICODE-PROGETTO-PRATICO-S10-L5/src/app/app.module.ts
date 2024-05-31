@@ -10,6 +10,7 @@ import { AllToDoCompletedComponent } from './pages/all-to-do-completed/all-to-do
 import { AllUsersComponent } from './pages/all-users/all-users.component';
 import { SingleTodoComponent } from './components/single-todo/single-todo.component';
 import { SingleUserComponent } from './components/single-user/single-user.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SingleUserComponent } from './components/single-user/single-user.compon
     AllUsersComponent,
     SingleTodoComponent,
     SingleUserComponent,
+    ErrorPageComponent,
 
 
   ],

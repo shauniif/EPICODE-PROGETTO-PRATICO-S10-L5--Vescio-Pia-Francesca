@@ -1,6 +1,6 @@
 <div
-  class="card"
-  [ngClass]="{ 'bg-success': toDo.completed, 'bg-danger': !toDo.completed }"
+  class="card w-auto hDivCard ms-3"
+  [ngClass]="{ completed: toDo.completed, notcompleted: !toDo.completed }"
 >
   <div class="card-body">
     <p class="card-text">

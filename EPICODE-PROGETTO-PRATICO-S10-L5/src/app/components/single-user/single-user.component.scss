@@ -1,3 +1,13 @@
-.btnColrN {
-    background-color: #129df8;
+.imgWidth {
+ max-width: 50%;
+}
+.textPos {
+  text-align: center;
+
+  @media screen and (min-width: 992px) {
+    text-align: left;
+  }
+}
+.bgCard {
+  background-color: #FFCF96;
 }

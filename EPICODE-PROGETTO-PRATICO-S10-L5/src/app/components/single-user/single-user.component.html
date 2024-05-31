@@ -1,11 +1,23 @@
-<div class="card">
-  <img class="img-card-top" [src]="user.image" />
-  <div class="card-body">
-    <h3 class="card-text">{{ user.firstName }} {{ user.lastName }}</h3>
-    <h6 class="card-text">{{ user.title }}</h6>
-    <app-single-todo
-      *ngFor="let allToDo of user.posts"
-      [toDo]="allToDo"
-    ></app-single-todo>
+<div class="card w-auto bgCard my-3">
+  <div class="d-flex flex-column flex-lg-row justify-content-center">
+    <img
+      class="img-thumbnail bg-transparent border border-0"
+      [src]="user.image"
+    />
+    <div class="card-body px-0 ps-3 textPos bgCard">
+      <h3 class="card-text">{{ user.firstName }} {{ user.lastName }}</h3>
+      <h6 class="card-text">{{ user.title }}</h6>
+    </div>
+    <div class="row flex-lg-row justify-content-start align-content-center">
+      <div
+        class="col-lg-11 d-flex flex-column flex-lg-row justify-content-center align-content-center"
+      >
+        <app-single-todo
+          *ngFor="let allToDo of user.posts"
+          [toDo]="allToDo"
+          class="w-auto"
+        ></app-single-todo>
+      </div>
+    </div>
   </div>
 </div>
