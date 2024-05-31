@@ -812,14 +812,9 @@ export class UsersService {
   ]
 
 
-  constructor( private toDoSvc:ToDoService) {}
-  getPostsForUsers(): iUser[] {
-    let toDoofUser = this.users.map((u) => {
-      const allToDo = this.toDoSvc.toDoArr.filter((t) => t.userId === u.id);
-      u.posts = allToDo;
-      return u;
-    });
-    return toDoofUser;
-    }
 
+  getUsers(){
+    return this.users
+  }
 
+  }

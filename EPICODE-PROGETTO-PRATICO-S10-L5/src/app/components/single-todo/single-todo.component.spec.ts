@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
+import { SingleTodoComponent } from './single-todo.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('SingleTodoComponent', () => {
+  let component: SingleTodoComponent;
+  let fixture: ComponentFixture<SingleTodoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FooterComponent]
+      declarations: [SingleTodoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(SingleTodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

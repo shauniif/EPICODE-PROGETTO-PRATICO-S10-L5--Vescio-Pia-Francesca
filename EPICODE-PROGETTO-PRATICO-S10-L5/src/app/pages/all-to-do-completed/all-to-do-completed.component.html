@@ -1,1 +1,5 @@
-<p>all-to-do-completed works!</p>
+<div class="row">
+  <div class="col" *ngFor="let toDo of toDoArrWithUserCompleted">
+    <app-single-todo [toDo]="toDo"></app-single-todo>
+  </div>
+</div>

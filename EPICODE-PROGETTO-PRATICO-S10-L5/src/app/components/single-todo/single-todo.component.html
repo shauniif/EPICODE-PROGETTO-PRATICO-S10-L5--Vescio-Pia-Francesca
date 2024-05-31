@@ -1,0 +1,16 @@
+<div
+  class="card"
+  [ngClass]="{ 'bg-success': toDo.completed, 'bg-danger': !toDo.completed }"
+>
+  <div class="card-body">
+    <p class="card-text">
+      {{ toDo.todo }}
+    </p>
+
+    <h5 class="card-title" *ngIf="toDo.user">
+      Compito di: {{ toDo.user.firstName }} {{ toDo.user.lastName }}
+    </h5>
+    <input type="checkbox" [(ngModel)]="toDo.completed" />
+    <p>{{ toDo.completed ? "Completato" : "Da fare" }}</p>
+  </div>
+</div>

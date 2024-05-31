@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+showN: boolean = false;
+toggleNavbar() {
+  this.showN = !this.showN;
+  console.log(this.showN);
 
+}
 }

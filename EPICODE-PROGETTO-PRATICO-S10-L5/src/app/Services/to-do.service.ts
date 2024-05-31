@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { iTodo } from '../Modules/i-todo';
 import { UsersService } from './users.service';
+import { iUser } from '../Modules/i-user';
 
 @Injectable({
   providedIn: 'root'
@@ -908,17 +909,43 @@ export class ToDoService {
       "completed":false,
       "userId":32
     }
-  ];
+  ]
+  ArrUser: iUser[] = this.usersSvc.getUsers();
 
-  constructor(private usersSvc:UsersService) {}
+  constructor(private usersSvc: UsersService) { }
 
 
   getUserWithPosts(): iTodo[] {
-    let postWithAuthor:iTodo[] = this.toDoArr.map((p) => {
-      let user = this.usersSvc.users.find((a) => a.id == p.userId);
+    let postWithAuthor = this.toDoArr.map((p) => {
+      let user = this.ArrUser.find((a) => a.id === p.userId);
       p.user = user;
       return p;
     });
     return postWithAuthor;
+  }
+  getUserWithCompleted(): iTodo[] {
+    let postWithAuthor = this.getUserWithPosts();
+    let postWithAuthorCompleted = postWithAuthor.filter((p) => {
+
+      return p.completed;
+    });
+    return postWithAuthorCompleted;
+  }
+  getPostsForUsers(): iUser[] {
+    let toDoofUser = this.ArrUser.map((u) => {
+      const allToDo = this.toDoArr.filter((t) => t.userId === u.id);
+      u.posts = allToDo;
+      return u;
+    });
+    return toDoofUser;
+    }
+
+  searchByUser(query:string): iTodo[] {
+    if(query !== undefined) {
+      let postWithAuthor = this.getUserWithPosts();
+      return postWithAuthor.filter((p) => p.user?.firstName.toLowerCase().includes(query.toLowerCase()));
+      ;
+    }
+    return []
   }
 }

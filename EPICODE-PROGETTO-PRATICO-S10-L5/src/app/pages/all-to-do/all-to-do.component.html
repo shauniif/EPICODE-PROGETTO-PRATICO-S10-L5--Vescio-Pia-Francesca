@@ -1,1 +1,20 @@
-<p>all-to-do works!</p>
+<div>
+  <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="autore"
+        placeholder="Cerca un autore..."
+        [(ngModel)]="query"
+        (input)="searchToDobyUser(query)"
+      />
+    </div>
+    <h4>Risulati trovati con :{{ query }}</h4>
+  </div>
+  <div class="row row-cols-1 overflow-y-scroll hDiv">
+    <div class="col" *ngFor="let toDo of toDoArrWithUser">
+      <app-single-todo [toDo]="toDo"></app-single-todo>
+    </div>
+  </div>
+</div>
